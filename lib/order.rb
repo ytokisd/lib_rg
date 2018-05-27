@@ -1,9 +1,9 @@
+# Class describes Order entity
 class Order
   attr_accessor :book, :reader, :date
-  include Common 
-  def initialize(book, reader)
+  def initialize(book, reader, date)
     @book = book
     @reader = reader
-    @date = Common.format_time
+    @date = date
   end
 end
