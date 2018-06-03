@@ -18,9 +18,9 @@ loop do
   when 2 then p library.most_popular_book
   when 3 then p library.three_popular_books_ordered_times
   when 4
-  puts 'Please enter new file name (e. g. new.yml)'
-  destination = './db/' + gets.chomp
-  library.save_to_file(destination)
+    puts 'Please enter new file name (e. g. new.yml)'
+    destination = './db/' + gets.chomp
+    library.save_to_file(destination)
   when 5 then p library.load_data
   when 6 then break
   else

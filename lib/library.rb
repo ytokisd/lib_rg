@@ -14,15 +14,8 @@ class Library
   end
 
   def get_results(model_name, search_criteria, num_of_records)
-    array_of_entities = []
-    @library_data[:orders].each do |x|
-      array_of_entities << x.instance_variable_get("@#{model_name}")
-                            .instance_variable_get("@#{search_criteria}")
-    end
-    array_of_entities.group_by { |x| x }
-                     .max_by(num_of_records) do |_criteria, encountered_times|
-      encountered_times.length
-    end
+    @library_data[:orders].group_by { |order| order.send(model_name).send(search_criteria) }
+                          .max_by(num_of_records) { |_criteria, encountered_times| encountered_times.length}
   end
 
   def most_popular_book
@@ -34,11 +27,11 @@ class Library
   end
 
   def three_popular_books_ordered_times
-    val = 0
-    get_results('book', 'title', 3).each do |element|
-      val += element.last.length
+    book_ordered_times = 0
+    get_results('book', 'title', 3).each do |book_ordered|
+      book_ordered_times += book_ordered.last.length
     end
-    val
+    book_ordered_times
   end
 
   def save_to_file(destination)
