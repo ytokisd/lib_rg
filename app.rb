@@ -16,7 +16,7 @@ loop do
   case number
   when 1 then p library.most_active_reader
   when 2 then p library.most_popular_book
-  when 3 then p library.three_popular_books_ordered_times
+  when 3 then p "Three most popular books were ordered by #{library.three_popular_books_ordered_times} readers"
   when 4
     puts 'Please enter new file name (e. g. new.yml)'
     destination = './db/' + gets.chomp
