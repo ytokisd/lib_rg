@@ -1,0 +1,95 @@
+---
+:authors:
+- &1 !ruby/object:Author
+  name: New Author
+  biography: " New Bio"
+- &2 !ruby/object:Author
+  name: Another Author
+  biography: Second bio
+- &3 !ruby/object:Author
+  name: Renown Author
+  biography: Another Bio
+- &4 !ruby/object:Author
+  name: Popular Author
+  biography: Unique Bio
+- &5 !ruby/object:Author
+  name: Legendary Author
+  biography: Everyone know him
+:books:
+- &6 !ruby/object:Book
+  title: Bestseller
+  author: *1
+- &8 !ruby/object:Book
+  title: Lat Years Best Book
+  author: *2
+- &11 !ruby/object:Book
+  title: Path to Enlightenment
+  author: *3
+- &12 !ruby/object:Book
+  title: Some Good Book
+  author: *4
+- &13 !ruby/object:Book
+  title: All Time Greatest
+  author: *5
+:readers:
+- &10 !ruby/object:Reader
+  name: New Reader
+  email: email
+  city: city
+  street: street
+  house: house
+- &7 !ruby/object:Reader
+  name: Good Reader
+  email: email
+  city: city
+  street: street
+  house: house
+- &9 !ruby/object:Reader
+  name: Nice Reader
+  email: email
+  city: city
+  street: street
+  house: house
+- &14 !ruby/object:Reader
+  name: Fine Reader
+  email: email
+  city: city
+  street: street
+  house: house
+:orders:
+- !ruby/object:Order
+  book: *6
+  reader: *7
+  date: 2018-05-27
+- !ruby/object:Order
+  book: *8
+  reader: *9
+  date: 2018-05-27
+- !ruby/object:Order
+  book: *8
+  reader: *10
+  date: 2018-05-27
+- !ruby/object:Order
+  book: *11
+  reader: *9
+  date: 2018-05-27
+- !ruby/object:Order
+  book: *12
+  reader: *10
+  date: 2018-05-27
+- !ruby/object:Order
+  book: *13
+  reader: *14
+  date: 2018-05-27
+- !ruby/object:Order
+  book: *6
+  reader: *9
+  date: 2018-05-27
+- !ruby/object:Order
+  book: *11
+  reader: *14
+  date: 2018-05-27
+- !ruby/object:Order
+  book: *8
+  reader: *10
+  date: 2018-05-27
