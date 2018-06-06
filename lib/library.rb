@@ -30,7 +30,7 @@ class Library
   def three_popular_books_ordered_times
     popular_books = get_results('book', 3)
     library_data[:orders].select { |order| popular_books.include?(order.book) }
-                         .map { |order| order.reader.name }.uniq!.count
+                         .map(&:reader).uniq.count
   end
 
   def save_to_file(destination)
